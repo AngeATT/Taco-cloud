@@ -8,7 +8,6 @@ import java.util.List;
 
 @Data
 public class Taco {
-    @NonNull()
     private String name;
     private List<Ingredient> ingredients;
 }
