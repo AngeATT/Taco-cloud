@@ -1,8 +1,6 @@
 package angeATT.Tacocloud;
 
 
-import angeATT.Tacocloud.Controllers.HomeController;
-
 import org.junit.jupiter.api.Test;
 
 import static
@@ -15,7 +13,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import static org.hamcrest.core.StringContains.containsString;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-@WebMvcTest(HomeController.class)
+@WebMvcTest()
 public class HomeControllerTest {
     @Autowired
     private MockMvc mockMvc;
