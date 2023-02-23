@@ -5,11 +5,9 @@ import lombok.NonNull;
 
 @Data
 public class Ingredient {
-    @NonNull
+
     private final String id;
-    @NonNull
     private final String name;
-    @NonNull
     private final Type type;
 
     public enum Type{
