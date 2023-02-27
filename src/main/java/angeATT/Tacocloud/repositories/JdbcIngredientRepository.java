@@ -4,6 +4,7 @@ import angeATT.Tacocloud.converters.StringToIngredientConverter;
 import angeATT.Tacocloud.domains.Ingredient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import java.sql.ResultSet;
@@ -14,8 +15,8 @@ import java.util.Optional;
 public class JdbcIngredientRepository implements IngredientRepository{
     private final JdbcTemplate jdbcTemplate;
     @Autowired
-    public JdbcIngredientRepository(JdbcTemplate jdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate;
+    public JdbcIngredientRepository(JdbcTemplate jdbcTemp) {
+        this.jdbcTemplate = jdbcTemp;
     }
     @Override
     public Iterable<Ingredient> findAll() {

@@ -26,8 +26,8 @@ public class DesignTacoController {
     private final IngredientRepository ingredientRepo;
     @Autowired
     public DesignTacoController(
-            IngredientRepository ingredientRepo) {
-        this.ingredientRepo = ingredientRepo;
+            IngredientRepository ingredientRepository) {
+        this.ingredientRepo = ingredientRepository;
     }
     @ModelAttribute
     public void addIngredientsToModel(Model model) {
