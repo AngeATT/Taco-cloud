@@ -24,15 +24,21 @@ public class JdbcIngredientRepository implements IngredientRepository{
 
     @Override
     public Optional<Ingredient> findById(String id) {
-        List<Ingredient> results =  jdbcTemplate.query("select id, name, type from Ingredient where id=?",this::mapRowToIngredient);
+        List<Ingredient> results =  jdbcTemplate.query("select id, name, type from Ingredient where id=?",this::mapRowToIngredient,id);
         if (results.size() > 0) return Optional.of(results.get(0));
         return Optional.empty();
     }
 
     @Override
     public Ingredient save(Ingredient ingredient) {
-        return null;
+        jdbcTemplate.update(
+                "insert into Ingredient (id, name, type) values (?, ?, ?)",
+                ingredient.getId(),
+                ingredient.getName(),
+                ingredient.getType().toString());
+        return ingredient;
     }
+    
     private Ingredient mapRowToIngredient(ResultSet resultSet,int row) throws SQLException {
         return new Ingredient(
                 resultSet.getString("id"),
