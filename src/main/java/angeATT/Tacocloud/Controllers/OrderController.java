@@ -1,8 +1,10 @@
 package angeATT.Tacocloud.Controllers;
 
 import angeATT.Tacocloud.domains.TacoOrder;
+import angeATT.Tacocloud.repositories.OrderRepository;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +19,11 @@ import org.springframework.web.bind.support.SessionStatus;
 @SessionAttributes("tacoOrder")
 public class OrderController {
 
+    OrderRepository orderRepository;
+    @Autowired
+    OrderController(OrderRepository orderRepository){
+        this.orderRepository = orderRepository;
+    }
     @GetMapping("/current")
     public String showCurrentOrder(){
         return "orderForm";
@@ -27,6 +34,7 @@ public class OrderController {
         if ( errors.hasErrors() ){
             return "orderForm";
         }
+        orderRepository.save(order);
         log.info("Order submitted: {}", order);
         sessionStatus.setComplete();
         return "redirect:/";

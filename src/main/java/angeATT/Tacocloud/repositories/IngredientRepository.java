@@ -2,11 +2,10 @@ package angeATT.Tacocloud.repositories;
 
 import java.util.Optional;
 import angeATT.Tacocloud.domains.Ingredient;
-public interface IngredientRepository {
-    Iterable<Ingredient> findAll();
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
-    Optional<Ingredient> findById(String id);
+public interface IngredientRepository extends CrudRepository<Ingredient,String> {
 
-    Ingredient save(Ingredient ingredient);
 
 }
