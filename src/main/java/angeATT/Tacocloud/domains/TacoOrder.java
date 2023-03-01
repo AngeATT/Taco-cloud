@@ -1,28 +1,30 @@
 package angeATT.Tacocloud.domains;
 
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.CreditCardNumber;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.Column;
-import org.springframework.data.relational.core.mapping.Table;
 
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-@Table("Taco_Order")
+
+@Entity
 @Data
 public class TacoOrder implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Column("placed_at") //exemple de la spécification de la colonne
     private Date placedAt;
     @NotBlank(message = "Delivery name is required")
     private String deliveryName;
@@ -42,6 +44,7 @@ public class TacoOrder implements Serializable {
     private String ccExpiration;
     @Digits(integer=3, fraction=0, message="Invalid CVV")
     private String ccCVV;
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Taco> tacos = new ArrayList<>();
 
     public void addTaco(Taco taco) {

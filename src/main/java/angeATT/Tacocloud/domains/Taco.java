@@ -1,19 +1,23 @@
 package angeATT.Tacocloud.domains;
 
 
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.Table;
+import lombok.NoArgsConstructor;
+
 
 import java.util.Date;
 import java.util.List;
 
 @Data
-@Table("Taco")
+@Entity
 public class Taco {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id; //for data persistence
     private Date createdAt = new Date(); //date de création pour la persistance
     @NotNull
@@ -21,5 +25,6 @@ public class Taco {
     private String name;
     @NotNull
     @Size(min = 1, message = "Choississez au moins un ingrédient")
+    @ManyToMany()
     private List<Ingredient> ingredients;
 }

@@ -1,17 +1,16 @@
 package angeATT.Tacocloud.domains;
 
-import lombok.Data;
-import lombok.NonNull;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.Column;
-import org.springframework.data.relational.core.mapping.Table;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import lombok.*;
 
-@Table("Ingredient")
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor(access= AccessLevel.PRIVATE, force=true)
 @Data
 public class Ingredient {
-    @Id
-    @Column("id2")
     private final String id2;
+    @Id
     private final String id;
     private final String name;
     private final Type type;

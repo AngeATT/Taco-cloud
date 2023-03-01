@@ -1,11 +1,12 @@
 package angeATT.Tacocloud.domains;
 
+import jakarta.persistence.Entity;
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.Table;
+import lombok.NoArgsConstructor;
+
 
 @Data
-@Table
 public class IngredientRef {
     private final String ingredient;
 
