@@ -9,7 +9,6 @@ import lombok.*;
 @NoArgsConstructor(access= AccessLevel.PRIVATE, force=true)
 @Data
 public class Ingredient {
-    private final String id2;
     @Id
     private final String id;
     private final String name;

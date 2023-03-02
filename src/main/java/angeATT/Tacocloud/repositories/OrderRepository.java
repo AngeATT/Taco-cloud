@@ -6,5 +6,4 @@ import org.springframework.stereotype.Repository;
 
 
 public interface OrderRepository extends CrudRepository<TacoOrder, Long> {
-
 }
