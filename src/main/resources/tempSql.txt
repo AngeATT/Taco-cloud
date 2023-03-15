@@ -1,0 +1,11 @@
+create table if not exists Utilisateur (
+  id identity,
+  username varchar(50) not null,
+  password varchar(50) not null,
+  fullname varchar(50) not null,
+  street varchar(22) not null,
+  city varchar(10) not null,
+  state varchar(16) not null,
+  zip varchar(15) not null,
+  phoneNumber varchar(15) not null
+ );

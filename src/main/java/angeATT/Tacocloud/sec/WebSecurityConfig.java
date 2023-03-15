@@ -20,26 +20,47 @@ public class WebSecurityConfig {
         return new BCryptPasswordEncoder();
     }
     @Bean
-    public UserDetailsService userDetailsService(UserRepository userRepo) {
+    public UserDetailsService userDetailsService(UtilisateurRepository userRepo) {
         return username -> {
-            User user = userRepo.findByUsername(username);
-            if (user != null) return user;
+            Utilisateur utilisateur = userRepo.findByUsername(username);
+            if (utilisateur != null) return utilisateur;
             throw new UsernameNotFoundException("User '" + username + "' not found");
         };
     }
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        return http.
-                authorizeHttpRequests(
+                http.authorizeHttpRequests(
                         (authorize) -> authorize
-                                .anyRequest().permitAll()
+                                .requestMatchers("/orders","/design").hasRole("USER")
+                                .requestMatchers("/","/**").permitAll()
                               //  .requestMatchers("/login","/home","/registration","/").permitAll()
-                              //  .anyRequest().hasRole("USER")
                 )
                 .formLogin()
                 .and()
-                .build();
+                .csrf().disable(); //desactiver la protection contre csrf pour accéder à h2
+
+                http.headers().frameOptions().disable(); //h2 se lance dans une frame donc on va desactiver X-frame options dans spring security
+                return http.build();
 
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

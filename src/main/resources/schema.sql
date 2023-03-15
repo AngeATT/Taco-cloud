@@ -27,6 +27,7 @@ create table if not exists Taco (
   name varchar(25) not null,
   type varchar(10) not null
  );
+
 alter table Taco
  add foreign key (taco_order) references Taco_Order(id);
 
