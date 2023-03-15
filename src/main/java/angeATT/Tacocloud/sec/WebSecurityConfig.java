@@ -36,6 +36,8 @@ public class WebSecurityConfig {
                               //  .requestMatchers("/login","/home","/registration","/").permitAll()
                 )
                 .formLogin()
+                        .loginPage("/login")
+                        .defaultSuccessUrl("/design", true)
                 .and()
                 .csrf().disable(); //desactiver la protection contre csrf pour accéder à h2
 
