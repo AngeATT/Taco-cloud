@@ -22,6 +22,7 @@ import java.util.stream.Collectors;
 @Controller
 @RequestMapping("/design")
 @SessionAttributes("tacoOrder")
+
 public class DesignTacoController {
     private final IngredientRepository ingredientRepo;
     @Autowired
@@ -38,7 +39,6 @@ public class DesignTacoController {
                     filterByType((List<Ingredient>) ingredients, type));
         }
     }
-
     Iterable<Ingredient> filterByType( List<Ingredient> ingredients, Type type) {
         return ingredients.stream()
                 .filter(x -> x.getType().equals(type))

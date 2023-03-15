@@ -4,10 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Créer un taco</title>
-    <link rel="stylesheet" th:href="@{/styles.css}" />
+    <link rel="stylesheet" th:href="@{/styles.css}"/>
 </head>
 <body>
-<h1>Créer un tacos</h1>
+<span>
+    <h1>Créer un tacos</h1>
+    <form method="POST" th:action="@{/logout}">
+ <input type="submit" value="Logout"/>
+</form>
+</span>
 <img th:src="@{/images/tacos.jpeg}">
 <h2>Créez votre wrap :</h2>
 <form method="POST" th:object="${taco}">
@@ -54,11 +59,11 @@
         </div>
     </div>
     <div>
-    <br>
-    <h3>Nommez votre taco</h3>
-    <input type="text" th:field="*{name}" placeholder="Entrez un nom pour votre taco">
-    <button>Envoyer </button>
-        </div>
+        <br>
+        <h3>Nommez votre taco</h3>
+        <input type="text" th:field="*{name}" placeholder="Entrez un nom pour votre taco">
+        <button>Envoyer</button>
+    </div>
 </form>
 
 </body>

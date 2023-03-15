@@ -34,11 +34,13 @@ public class WebSecurityConfig {
                                 .requestMatchers("/orders","/design").hasRole("USER")
                                 .requestMatchers("/","/**").permitAll()
                               //  .requestMatchers("/login","/home","/registration","/").permitAll()
-                )
-                .formLogin()
+                ).formLogin()
                         .loginPage("/login")
                         .defaultSuccessUrl("/design", true)
                 .and()
+                        .logout()
+                        .logoutSuccessUrl("/login")
+                        .and()
                 .csrf().disable(); //desactiver la protection contre csrf pour accéder à h2
 
                 http.headers().frameOptions().disable(); //h2 se lance dans une frame donc on va desactiver X-frame options dans spring security
