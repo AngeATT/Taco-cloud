@@ -2,15 +2,29 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
+    <link href="./style.css">
     <title>Page d'acceuil</title>
 </head>
 <body>
-<h1>Taco Home page</h1>
-<img th:src="@{/images/tacos.jpeg}" src="">
-<div>
-    <a th:href="@{/design}">Passer une commande de tacos</a>
-</div>
 
-
+<header><h1>Taco Home page</h1></header>
+<nav>
+    <a>Se connecter</a>
+    <a>S'enregistrer</a>
+</nav>
+<section>
+    <div id="diaporama">
+        <img th:src="@{/images/tacos.jpeg}" src="">
+    </div>
+    <div id="text-presentation"></div>
+    <div>
+        <div id="connexion">
+        <a th:href="@{/design}">Passer une commande de tacos</a>
+        </div>
+    </div>
+</section>
+<footer>
+    <span>Fleau-corp</span>
+</footer>
 </body>
 </html>

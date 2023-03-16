@@ -1,0 +1,44 @@
+{
+  "name": "taco-cloud",
+  "version": "1.0.0",
+  "description": "Projet pour apprendre Spring Boot et utiliser npm",
+  "main": "index.js",
+  "scripts": {
+    "watch": "gulp watch",
+    "build": "gulp build",
+    "build-prod": "NODE_ENV='production' gulp build --env production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AngeATT/Taco-cloud.git"
+  },
+  "author": "Ange-ATT",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AngeATT/Taco-cloud/issues"
+  },
+  "homepage": "https://github.com/AngeATT/Taco-cloud#readme",
+  "dependencies": {
+    "autoprefixer": "^10.4.14",
+    "bootstrap": "^5.2.3",
+    "postcss": "^8.4.21"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.3",
+    "@babel/preset-env": "^7.20.2",
+    "browser-sync": "^2.29.0",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-environments": "^1.0.1",
+    "gulp-postcss": "^9.0.1",
+    "gulp-purgecss": "^5.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-terser": "^2.1.0",
+    "gulp-uglifycss": "^1.1.0",
+    "gulp-watch": "^4.0.1"
+  },
+  "overrides": {
+    "graceful-fs": "^4.2.10"
+  }
+}
