@@ -5,26 +5,56 @@
     <link rel="stylesheet" th:href="@{/css/style.css}">
     <title>Page d'acceuil</title>
 </head>
-<body>
+<body class="m-0 p-0 ">
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img th:src="@{/images/taco-icon.png}"  width="30" height="30" class="d-inline-block align-top" alt="">
+            Fleau Tacos
+        </a>
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+                <a class="nav-link active" th:href="@{/login}" >Se connecter</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/register}">S'enregistrer</a>
+            </li>
+        </ul>
+    </nav>
+    <header>
+        <h1 class="display-4 m-2">Taco Cloud</h1>
+    </header>
+    <hr>
+<div class="container mb-5">
+    <div class="row">
+        <div class="col">
+            <div class="">
+                <img width="450" height="350" th:src="@{/images/tacos.jpeg}">
+            </div>
+        </div>
+        <div class="col d-flex justify-content-center align-items-center">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Qui somme nous ?</h5>
+                    <p class="card-text">
+                        Bienvenue chez Taco Cloud, une entreprise passionnée de tacos et de
+                        cuisine mexicaine authentique ! Nous sommes fiers de vous proposer
+                        des tacos savoureux,
+                        préparés avec des ingrédients frais et de qualité supérieure.</p>
+                    <p>Enregistrez vous dès maintenant pour commander des tacos personalisez :</p>
 
-<header><h1>Taco Home page</h1></header>
-<nav>
-    <a>Se connecter</a>
-    <a>S'enregistrer</a>
-</nav>
-<section>
-    <div id="diaporama">
-        <img th:src="@{/images/tacos.jpeg}" src="">
-    </div>
-    <div id="text-presentation"></div>
-    <div>
-        <div id="connexion">
-        <a th:href="@{/design}">Passer une commande de tacos</a>
+                    <span class="col-sm-6" >
+                    <a href="#" class="btn btn-primary">Créer un compte</a>
+                </span>
+
+                </div>
+            </div>
         </div>
     </div>
-</section>
-<footer>
-    <span>Fleau-corp</span>
+</div>
+<footer class="card-footer d-flex justify-content-center align-items-end bg-secondary mt-10" >
+    <span >
+        &#169;Fleau-corp
+    </span>
 </footer>
 </body>
 </html>
