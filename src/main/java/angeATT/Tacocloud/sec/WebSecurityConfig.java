@@ -29,24 +29,27 @@ public class WebSecurityConfig {
     }
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-                http.authorizeHttpRequests(
+        http.authorizeHttpRequests(
                         (authorize) -> authorize
                                 .requestMatchers("/orders","/design").hasRole("USER")
                                 .requestMatchers("/","/**").permitAll()
-                              //  .requestMatchers("/login","/home","/registration","/").permitAll()
+                        //  .requestMatchers("/login","/home","/registration","/").permitAll()
                 ).formLogin()
-                        .loginPage("/login")
-                        .defaultSuccessUrl("/design", true)
+                .loginPage("/login")
+                .defaultSuccessUrl("/design", true)
                 .and()
-                        .logout()
-                        .logoutSuccessUrl("/login")
-                        .and()
+                .logout()
+                .logoutSuccessUrl("/login")
+                .and()
                 .csrf().disable(); //desactiver la protection contre csrf pour accéder à h2
 
-                http.headers().frameOptions().disable(); //h2 se lance dans une frame donc on va desactiver X-frame options dans spring security
-                return http.build();
+        http.headers().frameOptions().disable(); //h2 se lance dans une frame donc on va desactiver X-frame options dans spring security
+        return http.build();
 
     }
+
+
+
 
 }
 

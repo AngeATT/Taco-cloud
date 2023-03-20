@@ -9,3 +9,9 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create-drop
+server:
+  port: 8443
+  ssl:
+    key-store: file:src/main/resources/mykeys.jks
+    key-store-password: dragon
+    key-password: dragon
