@@ -1,0 +1,29 @@
+2023-03-20 11:46:00.597 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2023-03-20 11:46:00.796 [restartedMain] INFO  a.T.TacoCloudProjectApplication - Starting TacoCloudProjectApplication using Java 17.0.5 with PID 9420 (D:\repos\Taco-cloud\target\classes started by ange.attoungbre in D:\repos\Taco-cloud)
+2023-03-20 11:46:00.802 [restartedMain] INFO  a.T.TacoCloudProjectApplication - No active profile set, falling back to 1 default profile: "default"
+2023-03-20 11:46:01.005 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-03-20 11:46:01.009 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-03-20 11:46:04.315 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-03-20 11:46:04.718 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 368 ms. Found 3 JPA repository interfaces.
+2023-03-20 11:46:07.935 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8443 (https)
+2023-03-20 11:46:07.976 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-jsse-nio-8443"]
+2023-03-20 11:46:07.996 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-03-20 11:46:07.999 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-03-20 11:46:08.340 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-03-20 11:46:08.350 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 7329 ms
+2023-03-20 11:46:08.468 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - tacocloud - Starting...
+2023-03-20 11:46:09.172 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - tacocloud - Added connection conn0: url=jdbc:h2:mem:tacocloud user=ANGE
+2023-03-20 11:46:09.178 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - tacocloud - Start completed.
+2023-03-20 11:46:09.217 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:tacocloud'
+2023-03-20 11:46:10.078 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-03-20 11:46:10.323 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.6.Final
+2023-03-20 11:46:11.153 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2023-03-20 11:46:11.815 [restartedMain] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-03-20 11:46:15.339 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-03-20 11:46:15.360 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-03-20 11:46:16.678 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-03-20 11:46:17.674 [restartedMain] INFO  o.s.s.w.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3ea3aab1, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5b204268, org.springframework.security.web.context.SecurityContextHolderFilter@280bb45d, org.springframework.security.web.header.HeaderWriterFilter@2acf3a7, org.springframework.security.web.authentication.logout.LogoutFilter@489a4945, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@768148be, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@59fe5faa, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@18117a05, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@55ef0fb9, org.springframework.security.web.access.ExceptionTranslationFilter@5eeb2377, org.springframework.security.web.access.intercept.AuthorizationFilter@3b4c2803]
+2023-03-20 11:46:18.640 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2023-03-20 11:46:18.713 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["https-jsse-nio-8443"]
+2023-03-20 11:46:20.208 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8443 (https) with context path ''
+2023-03-20 11:46:20.257 [restartedMain] INFO  a.T.TacoCloudProjectApplication - Started TacoCloudProjectApplication in 21.15 seconds (process running for 24.142)
