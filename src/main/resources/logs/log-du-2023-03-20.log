@@ -27,3 +27,9 @@
 2023-03-20 11:46:18.713 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["https-jsse-nio-8443"]
 2023-03-20 11:46:20.208 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8443 (https) with context path ''
 2023-03-20 11:46:20.257 [restartedMain] INFO  a.T.TacoCloudProjectApplication - Started TacoCloudProjectApplication in 21.15 seconds (process running for 24.142)
+2023-03-20 17:03:18.333 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-03-20 17:03:18.367 [SpringApplicationShutdownHook] INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-03-20 17:03:18.703 [SpringApplicationShutdownHook] WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de données est déjà fermée (pour désactiver la fermeture automatique à l'arrêt de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" à l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+2023-03-20 17:03:18.705 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - tacocloud - Shutdown initiated...
+2023-03-20 17:03:18.714 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - tacocloud - Shutdown completed.
