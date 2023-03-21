@@ -2,6 +2,7 @@ package angeATT.Tacocloud.web.api;
 
 import angeATT.Tacocloud.domains.Taco;
 import angeATT.Tacocloud.repositories.TacoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.MediaType;
@@ -17,6 +18,7 @@ import java.io.IOException;
 @CrossOrigin(origins = "https://tacocloud:8443")
 public class TacoController {
     TacoRepository tacoRepo;
+    @Autowired
     TacoController(TacoRepository tacoRepo){ //autowiring implicite
         this.tacoRepo = tacoRepo;
     }
@@ -25,7 +27,7 @@ public class TacoController {
         PageRequest pageRequest = PageRequest.of(
                 0,12, Sort.by("createdAt").descending()
         );
-        return tacoRepo.findAll(pageRequest);
+        return tacoRepo.findAll();
     }
 
 }

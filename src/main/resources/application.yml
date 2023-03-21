@@ -8,10 +8,4 @@ spring:
     console.enabled: true
   jpa:
     hibernate:
-      ddl-auto: update
-server:
-  port: 8443
-  ssl:
-    key-store: file:src/main/resources/mykeys.jks
-    key-store-password: dragon
-    key-password: dragon
+      ddl-auto: create-drop
