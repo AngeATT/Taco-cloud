@@ -5,13 +5,12 @@ import angeATT.Tacocloud.repositories.TacoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
+import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "/api/tacos", produces = {MediaType.APPLICATION_JSON_VALUE})
@@ -28,6 +27,16 @@ public class TacoController {
                 0,12, Sort.by("createdAt").descending()
         );
         return tacoRepo.findAll();
+    }
+    @GetMapping("/{id}")
+    public ResponseEntity<Taco> tacoById(@PathVariable long id ){
+        Optional<Taco> taco = tacoRepo.findById(id);
+        return taco.map(value -> new ResponseEntity<>(value, HttpStatus.OK)).orElseGet(() -> new ResponseEntity<>(null, HttpStatus.NOT_FOUND));
+    }
+    @PostMapping(consumes = {MediaType.APPLICATION_JSON_VALUE})
+    @ResponseStatus(HttpStatus.CREATED)
+    public Taco postTaco(@RequestBody Taco taco){
+        return tacoRepo.save(taco);
     }
 
 }
