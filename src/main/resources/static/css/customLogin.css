@@ -1,0 +1,38 @@
+*{
+text-align: center;
+}
+h2{
+font-size: 50px;
+font-family: serif;}
+
+.input-login{
+width: 250px;
+ height: 50px;
+  border-radius: 5px;
+   border-width: 0px;
+   font-size: 25x;
+}
+::placeholder{
+text-align : center;
+font-size: 20px;}
+
+.login-btn{
+background-color: #CA6A42;
+border-width: 0px;
+color: white;
+width: 280px;
+height: 55px;
+border-radius: 5px;
+}
+.appel-inscription{
+color: #CA6A42;
+font-size : 20px;
+}
+.appel-inscription > p > a{
+color : #853d0b;
+text-decoration: underline;
+padding: 5px;
+}
+.login-btn[value]{
+font-size: 18px;}
+

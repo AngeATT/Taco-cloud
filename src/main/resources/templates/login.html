@@ -4,22 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/customLogin.css}">
     <title>Taco Cloud</title>
 </head>
-<body>
-<h1>Login</h1>
-<img th:src="@{/images/tacos.jpeg}"/>
-<div th:if="${error}">
-    Unable to login. Check your username and password.
+<body style="background-image: url('/images/tao-background-grand.jpg');background-repeat: no-repeat;background-origin: border-box;">
+
+<div class="d-inline-block w-10" >
+
 </div>
-<p>Nouveau sur le site ?
-    <a th:href="@{/register}">Enregistrez vous ici </a></p>
-<form method="POST" th:action="@{/login}" id="loginForm">
-    <label for="username">Username: </label>
-    <input type="text" name="username" id="username"/><br/>
-    <label for="password">Password: </label>
-    <input type="password" name="password" id="password"/><br/>
-    <input type="submit" value="Login"/>
-</form>
+<div class="d-flex w-100">
+    <div class="w-50 d-inline-block"></div>
+    <div class=" d-flex flex-column flex-md-0 w-auto d-inline-block p-3" style="background-color: #EFEEED; border-radius: 25px;">
+        <img th:src="@{/images/login-top.jpg}">
+        <h2>TACO</h2>
+        <p>Connectez vous ici !</p>
+        <form method="POST" th:action="@{/login}" id="loginForm">
+            <div th:if="${error}">
+                Unable to login. Check your username and password.
+            </div>
+            <input type="text" name="username" id="username" placeholder="Entrez un pseudo" class="input-login" /><br/> <hr>
+            <input type="password" name="password" id="password" placeholder="Entrez un mot de passe" style="width: 250px; border-radius: 5px;" class="input-login"/>
+            <br>
+            <br>
+            <input type="submit" value="Login" class="login-btn"/>
+            <div class="appel-inscription">
+                <p> <a th:href="@{/register}">Aucun compte ? Enregistrez vous</a></p>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
 </body>
 </html>
