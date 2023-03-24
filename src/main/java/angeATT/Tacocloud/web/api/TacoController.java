@@ -5,6 +5,7 @@ import angeATT.Tacocloud.domains.TacoOrder;
 import angeATT.Tacocloud.repositories.OrderRepository;
 import angeATT.Tacocloud.repositories.TacoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
@@ -71,6 +72,15 @@ public class TacoController {
             order.setCcCVV(patch.getCcCVV());
         }
         return orderRepo.save(order);
+    }
+    @DeleteMapping(path = "/{orderId}",consumes = {MediaType.APPLICATION_JSON_VALUE})
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public void deleteOrder(@PathVariable("orderId") Long orderId){
+        try{
+             orderRepo.deleteById(orderId);
+        }catch (EmptyResultDataAccessException e){
+            e.printStackTrace();
+        }
     }
 
 }
