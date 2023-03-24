@@ -1,6 +1,8 @@
 package angeATT.Tacocloud.web.api;
 
 import angeATT.Tacocloud.domains.Taco;
+import angeATT.Tacocloud.domains.TacoOrder;
+import angeATT.Tacocloud.repositories.OrderRepository;
 import angeATT.Tacocloud.repositories.TacoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
@@ -14,11 +16,13 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "/api/tacos", produces = {MediaType.APPLICATION_JSON_VALUE})
-@CrossOrigin(origins = "https://tacocloud:8443")
+@CrossOrigin(origins = "http://tacocloud:8080")
 public class TacoController {
     TacoRepository tacoRepo;
+    OrderRepository orderRepo;
     @Autowired
-    TacoController(TacoRepository tacoRepo){ //autowiring implicite
+    TacoController(TacoRepository tacoRepo, OrderRepository orderRepo){ //autowiring implicite
+
         this.tacoRepo = tacoRepo;
     }
     @GetMapping(params = "recent")
@@ -37,6 +41,36 @@ public class TacoController {
     @ResponseStatus(HttpStatus.CREATED)
     public Taco postTaco(@RequestBody Taco taco){
         return tacoRepo.save(taco);
+    }
+    @PatchMapping(path="/{orderId}", consumes="application/json")
+    public TacoOrder patchOrder(@PathVariable("orderId") Long orderId,
+                                @RequestBody TacoOrder patch) {
+        TacoOrder order = orderRepo.findById(orderId).get();
+        if (patch.getDeliveryName() != null) {
+            order.setDeliveryName(patch.getDeliveryName());
+        }
+        if (patch.getDeliveryStreet() != null) {
+            order.setDeliveryStreet(patch.getDeliveryStreet());
+        }
+        if (patch.getDeliveryCity() != null) {
+            order.setDeliveryCity(patch.getDeliveryCity());
+        }
+        if (patch.getDeliveryState() != null) {
+            order.setDeliveryState(patch.getDeliveryState());
+        }
+        if (patch.getDeliveryZip() != null) {
+            order.setDeliveryZip(patch.getDeliveryZip());
+        }
+        if (patch.getCcNumber() != null) {
+            order.setCcNumber(patch.getCcNumber());
+        }
+        if (patch.getCcExpiration() != null) {
+            order.setCcExpiration(patch.getCcExpiration());
+        }
+        if (patch.getCcCVV() != null) {
+            order.setCcCVV(patch.getCcCVV());
+        }
+        return orderRepo.save(order);
     }
 
 }
