@@ -7,7 +7,7 @@
     <link rel="stylesheet" th:href="@{/css/customLogin.css}">
     <title>Taco Cloud</title>
 </head>
-<body style="background-image: url('/images/tao-background-grand.jpg');background-repeat: no-repeat;background-origin: border-box;">
+<body>
 
 <div class="d-inline-block w-10" >
 
@@ -16,7 +16,7 @@
     <div class="w-50 d-inline-block"></div>
     <div class=" d-flex flex-column flex-md-0 w-auto d-inline-block p-3" style="background-color: #EFEEED; border-radius: 25px;">
         <img th:src="@{/images/login-top.jpg}">
-        <h2>TACO</h2>
+        <h2>TACO Cloud</h2>
         <p>Connectez vous ici !</p>
         <form method="POST" th:action="@{/login}" id="loginForm">
             <div th:if="${error}">
@@ -33,8 +33,10 @@
         </form>
     </div>
 </div>
-
-
-
+<footer id="footer" class="card-footer d-flex justify-content-center align-items-end mt-10">
+    <span>
+        &#169;Fleau-corp
+    </span>
+</footer>
 </body>
 </html>

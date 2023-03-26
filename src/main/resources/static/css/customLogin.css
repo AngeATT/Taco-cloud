@@ -1,6 +1,14 @@
 *{
 text-align: center;
 }
+
+body{
+background-image: url("/images/tao-background-grand.jpg");
+background-repeat: no-repeat;
+background-position: center;
+background-origin: border-box;
+}
+
 h2{
 font-size: 50px;
 font-family: serif;}
@@ -34,5 +42,15 @@ text-decoration: underline;
 padding: 5px;
 }
 .login-btn[value]{
-font-size: 18px;}
+font-size: 18px;
+}
+
+.card-footer{
+}
+ #footer{
+ background-color: #693514;
+ position:absolute;
+    bottom:0;
+    width:100%;
+ }
 

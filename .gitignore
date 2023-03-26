@@ -32,9 +32,9 @@ build/
 ### VS Code ###
 .vscode/
 node_modules
-node_modules
 node/npx.cmd
 node/npx
 node/node.exe
 node/npm
 node/npm.cmd
+/src/main/resources/logs/

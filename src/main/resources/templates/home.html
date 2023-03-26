@@ -3,58 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/homeCss.css}">
     <title>Page d'acceuil</title>
 </head>
 <body class="m-0 p-0 ">
-<nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="#">
-        <img th:src="@{/images/taco-icon.png}" width="30" height="30" class="d-inline-block align-top" alt="">
-        Fleau Tacos
-    </a>
-    <ul class="nav justify-content-end">
-        <li class="nav-item">
-            <a class="nav-link active" th:href="@{/login}">Se connecter</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" th:href="@{/register}">S'enregistrer</a>
-        </li>
-    </ul>
-</nav>
-<header>
-    <h1 class="display-4 m-2 p-3" style="font-family: Garamond">Taco Cloud</h1>
-</header>
-<hr class="m-0 p-0">
-<div class="pt-3 pb-3" style="background-color : #1f1f2b">
-    <div class="container">
-        <div class="row">
-            <div id="carouselExampleSlidesOnly" class="col carousel slide" data-ride="carousel">
-                <div class="carousel-inner" style="background-color : #1f1f2b">
-                    <div class="carousel-item active" style="background-color : #1f1f2b" >
-                        <img class="d-block" th:src="@{/images/tacoG.jpg}">
-                    </div>
-                </div>
-            </div>
-            <div class="col d-flex justify-content-center align-items-center">
-                <div style="color : white">
-                    <div class="card-body" >
-                        <h5 >Qui somme nous ?</h5>
-                        <p style="font-family :Lucida Handwriting">
-                            Bienvenue chez Taco Cloud, une entreprise passionnée de tacos et de
-                            cuisine mexicaine authentique ! Nous sommes fiers de vous proposer
-                            des tacos savoureux !<hr>
-                        <p style="font-family :Lucida Handwriting">
-                        <br>Commander des tacos dès maintenant : </p>
-
-                        <span class="col-sm-6">
-                                <a href="#" class="btn btn-primary">Créer un compte</a>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<div id="moitie-1">
+    <nav id="navbar" class="navbar" style="color: white">
+        <a class="navbar-brand" href="#"  style="color: white">
+            <img th:src="@{/images/taco-icon.png}" width="30" height="30" class="d-inline-block align-top" alt="">
+            Fleau Tacos
+        </a>
+        <ul class="nav justify-content-end gap-5" id="nav-right" style="color: white">
+            <li class="nav-item">
+                <a style="color: white"np class="nav-link active" th:href="@{/login}">Se connecter</a>
+            </li>
+            <li class="nav-item">
+                <a style="color: white" class="nav-link" th:href="@{/register}">S'enregistrer</a>
+            </li>
+        </ul>
+    </nav>
+    <header id="titre">
+        <h1 style="font-family: Garamond">Taco Cloud</h1>
+        <section id="description-site">
+            Bienvenue sur le meilleur site de Tacos !
+            <p>
+        </section>
+       <span>
+           <a class="btn-titre" th:href="@{/register}">S'enregistrer</a>
+           <a class="btn-titre" th:href="@{/login}"> Se connecter</a>
+       </span>
+    </header>
 </div>
-<footer class="card-footer d-flex justify-content-center align-items-end bg-secondary mt-10">
+<footer class="card-footer d-flex justify-content-center align-items-end mt-10">
     <span>
         &#169;Fleau-corp
     </span>

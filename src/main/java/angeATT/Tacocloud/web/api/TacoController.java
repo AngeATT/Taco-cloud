@@ -23,7 +23,7 @@ public class TacoController {
     OrderRepository orderRepo;
     @Autowired
     TacoController(TacoRepository tacoRepo, OrderRepository orderRepo){ //autowiring implicite
-
+        this.orderRepo = orderRepo;
         this.tacoRepo = tacoRepo;
     }
     @GetMapping(params = "recent")
@@ -73,7 +73,7 @@ public class TacoController {
         }
         return orderRepo.save(order);
     }
-    @DeleteMapping(path = "/{orderId}",consumes = {MediaType.APPLICATION_JSON_VALUE})
+    @DeleteMapping("/{orderId}")
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public void deleteOrder(@PathVariable("orderId") Long orderId){
         try{

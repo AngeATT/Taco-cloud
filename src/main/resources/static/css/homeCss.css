@@ -1,0 +1,43 @@
+#moitie-1{
+background-image: url("/images/home_top_large.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+background-color: #41231E;
+height: 100vmin;
+color: white;
+padding-left: 10vmax;
+}
+
+#navbar{
+padding-top: 2vw;
+padding-left: 6vw;
+padding-right: 25vw}
+
+#titre{
+padding-top: 23vh;
+padding-bottom: 23vh;
+}
+#titre > h1{
+font-size: 8vmax;
+}
+#description-site{
+font-size: 2rem;
+}
+
+.btn-titre{
+background-color: #ed9f51;
+border-radius: 5px;
+border-width: 0px;
+color: #693514;
+padding: 15px;
+font-size: 20px;
+appearance: button;
+text-decoration:none;
+}
+a:hover{
+color: white;
+}
+.card-footer{
+background-color: #693514;
+ }
