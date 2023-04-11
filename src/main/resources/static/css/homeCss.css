@@ -1,9 +1,11 @@
-#moitie-1{
+body{
 background-image: url("/images/home_top_large.jpg");
 background-repeat: no-repeat;
 background-size: cover;
 background-position: center;
 background-color: #41231E;
+}
+#moitie-1{
 height: 100vmin;
 color: white;
 padding-left: 10vmax;
@@ -41,3 +43,8 @@ color: white;
 .card-footer{
 background-color: #693514;
  }
+ footer{
+ position: absolute;
+   bottom: 0;
+   width: 100%;
+   }

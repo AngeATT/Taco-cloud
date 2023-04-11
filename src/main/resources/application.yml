@@ -12,4 +12,10 @@ spring:
   data:
     rest:
       base-path: /data-api
+  oauth2:
+    resourceserver:
+      jwt:
+        jwk-set-uri: http://localhost:9000/oauth2/jwks
+server:
+  port: 8080
 
