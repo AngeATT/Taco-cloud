@@ -14,8 +14,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.oauth2.jwt.JwtDecoder;
-import org.springframework.security.oauth2.jwt.JwtDecoders;
 import org.springframework.security.web.SecurityFilterChain;
 
 
@@ -23,14 +21,9 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class WebSecurityConfig {
     @Bean
-    public PasswordEncoder passwordEncoder() {
+    PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
     }
-    @Bean
-    public JwtDecoder jwtDecoder(){
-        return JwtDecoders.
-    }
-
     @Bean
     public UserDetailsService userDetailsService(UtilisateurRepository userRepo) {
         return username -> {
@@ -45,9 +38,9 @@ public class WebSecurityConfig {
                 .authorizeHttpRequests(
                         (authorize) -> authorize
                                 .requestMatchers("/orders","/design").hasRole("USER")
-                                .requestMatchers("/","/**").permitAll()
                                 .requestMatchers(HttpMethod.POST,"/api/ingredients").hasAuthority("SCOPE_writeIngredients")
                                 .requestMatchers(HttpMethod.DELETE,"/api/ingredients").hasAuthority("SCOPE_writeIngredients")
+                                .requestMatchers("/","/**").permitAll()
                         //  .requestMatchers("/login","/home","/registration","/").permitAll()
                                  )
                 .formLogin()
