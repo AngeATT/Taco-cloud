@@ -1,11 +1,8 @@
 package angeATT.Tacocloud.sec;
 
-import com.nimbusds.jose.jwk.source.JWKSource;
-import com.nimbusds.jose.proc.SecurityContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import org.springframework.context.annotation.Import;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -15,6 +12,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+
+import static org.springframework.security.config.Customizer.withDefaults;
 
 
 @Configuration
@@ -37,10 +36,11 @@ public class WebSecurityConfig {
         http
                 .authorizeHttpRequests(
                         (authorize) -> authorize
+                                .requestMatchers("/login","/registration").permitAll()
                                 .requestMatchers("/orders","/design").hasRole("USER")
                                 .requestMatchers(HttpMethod.POST,"/api/ingredients").hasAuthority("SCOPE_writeIngredients")
-                                .requestMatchers(HttpMethod.DELETE,"/api/ingredients").hasAuthority("SCOPE_writeIngredients")
-                                .requestMatchers("/","/**").permitAll()
+                                .requestMatchers(HttpMethod.DELETE,"/api/ingredients").hasAuthority("SCOPE_deleteIngredients")
+                                .requestMatchers("/","/**").authenticated()
                         //  .requestMatchers("/login","/home","/registration","/").permitAll()
                                  )
                 .formLogin()
@@ -50,6 +50,10 @@ public class WebSecurityConfig {
                 .logout()
                 .logoutSuccessUrl("/login")
                 .and()
+                .oauth2Login(
+                        oauth2Login ->
+                                oauth2Login.loginPage("/oauth2/authorization/taco-admin-client"))
+                .oauth2Client(withDefaults())
                 .oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt)
                 .csrf().disable(); //desactiver la protection contre csrf pour accéder à h2
 
