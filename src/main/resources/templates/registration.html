@@ -2,42 +2,79 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Taco Cloud</title>
-    <link rel="stylesheet" th:href="@{/css/style.css}">
+  <title>Taco Cloud</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+  <link rel="stylesheet" th:href="@{/css/customRegisterCss.css}">
 </head>
 
 <body>
-<h1>Register</h1>
 
-<img th:src="@{/images/tacos.jpeg}"/>
-
-<form method="POST" th:action="@{/register}" id="registerForm">
-
-    <label for="username">Username: </label>
-    <input type="text" name="username"/><br/>
-    <label for="password">Password: </label>
-    <input type="password" name="password"/><br/>
-    <label for="confirm">Confirm password: </label>
-    <input type="password" name="confirm"/><br/>
-    <label for="fullname">Full name: </label>
-    <input type="text" name="fullname"/><br/>
-
-    <label for="street">Street: </label>
-    <input type="text" name="street"/><br/>
-
-    <label for="city">City: </label>
-    <input type="text" name="city"/><br/>
-
-    <label for="state">State: </label>
-    <input type="text" name="state"/><br/>
-
-    <label for="zip">Zip: </label>
-    <input type="text" name="zip"/><br/>
-
-    <label for="phone">Phone: </label>
-    <input type="text" name="phone"/><br/>
-
-    <input type="submit" value="Register"/>
-</form>
+<nav id="navbar" class="navbar" style="color: white; background-color: #ebbf77;">
+  <a class="navbar-brand" th:href="@{/}" >
+    <img th:src="@{/images/taco-icon.png}" width="30" height="30" class="d-inline-block align-top" alt="">
+    Fleau Tacos
+  </a>
+  <ul class="nav justify-content-end gap-5" id="nav-right">
+    <li class="nav-item">
+      <a style="color:white; background-color:FCF2D9;" class="border nav-link" th:href="@{/login}">Se connecter</a>
+    </li>
+  </ul>
+</nav>
+<div class="container border rounded  formRegister"
+     style="background-color : #FCF2D9; color: #44301F; width: 40vmax; margin-top: 20vh; margin-left: 40vw">
+  <form method="POST" th:action="@{/register}" id="registerForm">
+    <div class="col text-center">
+      <h2>Register</h2>
+    </div>
+    <div class="row">
+      <div class="form-group col-md-6">
+        <label for="username">Username: </label>
+        <input type="text" name="username" class="form-control"/><br/>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="fullname">Full name: </label>
+        <input type="text" name="fullname" class="form-control"/><br/>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-md-6">
+        <label for="password">Password: </label>
+        <input type="password" name="password" class="form-control"/><br/>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="confirm">Confirm password: </label>
+        <input type="password" name="confirm" class="form-control"/><br/>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-md-4">
+        <label for="street">Street: </label>
+        <input type="text" name="street" class="form-control"/><br/>
+      </div>
+      <div class="form-group col-md-4">
+        <label for="city">City: </label>
+        <input type="text" name="city" class="form-control"/><br/>
+      </div>
+      <div class="form-group col-md-4">
+        <label for="state">State: </label>
+        <input type="text" name="state" class="form-control"/><br/>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <label for="zip">Zip: </label>
+        <input type="text" name="zip" class="form-control"/><br/>
+      </div>
+      <div class="col">
+        <label for="phone">Phone: </label>
+        <input type="text" name="phone" class="form-control"/><br/>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center">
+      <input type="submit" value="Register" class="col-md-6 btn mb-3 "
+             style="background-color: #AF6925; color: white;"/>
+    </div>
+  </form>
+</div>
 </body>
 </html>

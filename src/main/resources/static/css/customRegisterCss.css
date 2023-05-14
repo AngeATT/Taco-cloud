@@ -1,0 +1,19 @@
+body{
+background-image: url("/images/background-registration.jpg");
+background-repeat: no-repeat;
+background-position: center;
+background-origin: border-box;
+background-size: cover;
+height: 100vh;
+}
+
+*formRegister{
+width: 30%;
+padding-left: 2%;
+padding-right: 2%;
+}
+
+#navbar{
+padding-left: 6vw;
+padding-right: 25vw
+}
